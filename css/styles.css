@@ -66,10 +66,9 @@ img {
 }
 .container {
   margin: 0 auto;
-  /* width: 1200px;
-  max-width: 480px; */
-  padding-left: 15px;
-  padding-right: 15px;
+  max-width: 428px;
+  padding-left: 16px;
+  padding-right: 16px;
   /* outline: 2px solid green; */
 }
 .no-scroll {
@@ -314,6 +313,7 @@ img {
   padding: 16px 32px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  border: none;
   border-color: transparent;
   margin-left: auto;
   margin-right: auto;
@@ -358,7 +358,7 @@ img {
 /*----------------- Our team -----------------------------*/
 .team {
   padding-top: 96px;
-  padding-bottom: 128px;
+  padding-bottom: 96px;
 
   background-color: var(--color-light-bgc);
 }
@@ -367,23 +367,30 @@ img {
   flex-wrap: wrap;
   justify-content: center;
   gap: 72px;
-  flex-basis: calc((100% - 3 * 24px) / 4);
+  /* flex-basis: calc((100% - 3 * 24px) / 4); */
 }
 .team-title {
   text-align: center;
   margin-bottom: 54px;
 }
 .team-card {
+  height: 428px;
   box-shadow: var(--box-shadow-main);
   border-radius: 0px 0px 4px 4px;
 
   background-color: var(--color-light);
 }
 .about-team {
-  padding: 32px 15px;
+  padding: 32px 16px;
   text-align: center;
 }
 .team-text {
+  margin-bottom: 8px;
+}
+.team-after-title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
   margin-bottom: 8px;
 }
 .team-soc-list {
@@ -460,7 +467,7 @@ img {
 
 .footer {
   margin: auto;
-  max-width: 428px;
+
   padding-top: 96px;
   padding-bottom: 96px;
   background-color: var(--color-main);
@@ -470,7 +477,6 @@ img {
 }
 .footer-container {
   max-width: 268px;
-  margin-bottom: 72px;
 }
 .logo-footer {
   color: var(--color-light-bgc);
@@ -515,7 +521,7 @@ img {
   transition-property: background-color;
 }
 .footer-subscribe-input {
-  width: 396px;
+  width: 398px;
   height: 40px;
   font-size: 12px;
   line-height: 2;
@@ -631,7 +637,7 @@ img {
   padding-right: 32px;
   color: var(--color-light-bgc);
   background-color: var(--color-accent);
-  /* border-style: 1px solid #000000; */
+  border-style: 1px solid #000000;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   transform: translateY(100%);
   transition: transform 250ms linear;
@@ -655,16 +661,20 @@ img {
   opacity: 0;
   pointer-events: none;
 }
+.text {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+}
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 392px;
-  min-height: 586px;
   background-color: var(--color-bgc-modal);
   box-shadow: var(--box-shadow-modal);
   border-radius: 4px;
-  padding: 24px;
+  padding: 24px 16px;
   transform: translate(-50%, -50%) scaleY(1);
   transition: transform 500ms linear, opacity;
 }
@@ -698,14 +708,20 @@ img {
   margin-bottom: 16px;
   color: var(--color-main);
 }
-.modal-field {
-  margin-bottom: 8px;
+.modal-wrap-commit {
+  margin-top: 4px;
 }
+.modal-field-commit {
+  height: 138px;
+}
+
 .modal-input-wrap {
   position: relative;
+  margin-top: 4px;
+  margin-bottom: 8px;
 }
 .modal-input {
-  width: 100%;
+  width: 360px;
   height: 40px;
   background-color: transparent;
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -720,9 +736,6 @@ img {
   fill: var(--color-accent);
 }
 .modal-inputs-name {
-  font-size: 12px;
-  line-height: 1.33;
-  letter-spacing: 0.04em;
   color: var(--color-icons);
   margin-bottom: 4px;
 }
@@ -736,10 +749,7 @@ img {
 .modal-message {
   width: 100%;
   height: 120px;
-  font-size: 12px;
-  line-height: 1.33;
   padding: 8px 16px;
-  letter-spacing: 0.04em;
   background-color: transparent;
   resize: none;
   outline: transparent;
@@ -752,15 +762,12 @@ img {
   border: 1px solid #4d5ae5;
 }
 .modal-field-check {
-  margin-top: 16px;
+  margin-top: 18px;
   margin-bottom: 24px;
 }
 .check-text {
   display: flex;
   flex-wrap: wrap;
-  font-size: 12px;
-  line-height: 1.33;
-  letter-spacing: 0.04em;
   color: var(--color-checkbox);
 }
 .modal-btn-submit {
@@ -773,6 +780,7 @@ img {
   letter-spacing: 0.04em;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  border: none;
   border-color: transparent;
   color: var(--color-light);
   background-color: var(--color-accent);
@@ -810,7 +818,7 @@ img {
 }
 /* ------------------------------------------ */
 /* -------------------------------------------- */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 427px) {
   .container {
     width: 100%;
     max-width: 320px;
@@ -819,7 +827,14 @@ img {
   }
   .modal {
     width: 310px;
-    min-height: 550px;
+    /* min-height: 550px; */
+  }
+  .modal-title {
+    font-size: 14px;
+    line-height: 1.13;
+  }
+  .modal-input {
+    width: 278px;
   }
   .nav-mobile-item {
     font-weight: 600;
@@ -862,7 +877,7 @@ img {
     display: none;
   }
   .hero-container {
-    max-width: 318px;
+    max-width: 320px;
   }
   .hero-title {
     font-size: 36px;
@@ -874,12 +889,14 @@ img {
     display: block;
     margin-left: auto;
   }
+
   .footer > .container {
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
   .footer-container {
+    margin-bottom: 72px;
     text-align: center;
   }
   .footer-soc {
@@ -938,11 +955,15 @@ img {
   }
   .modal {
     width: 408px;
-    min-height: 576px;
+    height: 586px;
+  }
+  .modal-message {
+    max-width: 360px;
   }
 
   .feature-item {
     max-width: 356px;
+    margin-bottom: 0;
   }
   .feature-after-title.title {
     text-align: start;
@@ -954,8 +975,8 @@ img {
   .mobile-menu-open {
     display: none;
   }
-  .team {
-    padding-bottom: 104px;
+  .team-card {
+    width: 264px;
   }
   .team-list {
     gap: 24px;
@@ -978,6 +999,7 @@ img {
   }
   .footer {
     max-width: 768px;
+    height: 454px;
   }
   .footer-container {
     max-width: 264px;
@@ -990,6 +1012,7 @@ img {
   .footer-subscribe-input {
     width: 264px;
     margin-right: 24px;
+    margin-bottom: 0;
   }
 }
 @media screen and (min-width: 1200px) and (max-width: 2000px) {
@@ -1031,6 +1054,10 @@ img {
   .mobile-menu {
     display: none;
   }
+  .modal {
+    width: 408px;
+    height: 584px;
+  }
   /* ------------------------------------------------ */
   .feature-decor {
     display: flex;
@@ -1047,6 +1074,7 @@ img {
   }
   .feature-item {
     flex-basis: calc((100% - 3 * 24px) / 4);
+    margin-bottom: 0;
   }
   .feature-after-title.title {
     font-weight: 500;
@@ -1080,6 +1108,7 @@ img {
     margin-bottom: 72px;
   }
   .team-list {
+    flex-wrap: nowrap;
     gap: 24px;
   }
   /* ------------------------------------------------------- */
@@ -1096,12 +1125,18 @@ img {
   }
   .footer-soc {
     max-width: 208px;
-    padding-bottom: 130px;
     margin-right: 80px;
   }
   .footer-subscribe {
     max-width: 453px;
     margin-right: auto;
-    padding-bottom: 130px;
+  }
+  .footer-subscribe-form {
+    display: flex;
+  }
+  .footer-subscribe-input {
+    width: 264px;
+    margin-right: 24px;
+    margin-bottom: 0;
   }
 }
