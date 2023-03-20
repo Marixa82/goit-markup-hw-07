@@ -55,7 +55,73 @@
         </address>
       </div>
     </header>
-    <main></main>
+    <main>
+      <div class="mobile-menu is-hidden" data-menu>
+        <div class="container mobile-menu-container">
+          <div class="mobile-menu-nav">
+            <button type="button" class="mobile-close" data-menu-close>
+              <svg class="mobile-close-icon" width="8" height="8">
+                <use href="./images/sprite.svg#icon-close-black"></use>
+              </svg>
+            </button>
+            <ul class="nav-mobile-list list">
+              <li class="nav-mobile-item title">
+                <a class="nav-mobile-link current" href="./index.html"
+                  >Studio</a
+                >
+              </li>
+              <li class="nav-mobile-item title">
+                <a class="nav-mobile-link" href="./portfolio.html">Portfolio</a>
+              </li>
+              <li class="nav-mobile-item title">
+                <a class="nav-mobile-link" href="./contact.html">Contacts</a>
+              </li>
+            </ul>
+          </div>
+          <div class="address-mobile">
+            <ul class="address-mobile-list">
+              <li class="address-mobile-item list">
+                <a class="link" href="tel:+110001111111">+11 (000) 111-11-11</a>
+              </li>
+              <li class="address-mobile-item list">
+                <a class="link" href="mailto:info@devstudio.com"
+                  >info@devstudio.com</a
+                >
+              </li>
+            </ul>
+            <ul class="mobile-soc-list list">
+              <li class="mobile-soc-icon">
+                <a class="mobile-soc-link link" href=""
+                  ><svg width="16px" height="16px">
+                    <use href="./images/sprite.svg#icon-instagram-2"></use></svg
+                ></a>
+              </li>
+              <li class="mobile-soc-icon">
+                <a class="mobile-soc-link link" href=""
+                  ><svg width="16px" height="16px">
+                    <use href="./images/sprite.svg#icon-twitter-1"></use></svg
+                ></a>
+              </li>
+              <li class="mobile-soc-icon">
+                <a class="mobile-soc-link link" href=""
+                  ><svg width="16px" height="16px">
+                    <use href="./images/sprite.svg#icon-facebook-1"></use></svg
+                ></a>
+              </li>
+              <li class="mobile-soc-icon">
+                <a class="mobile-soc-link link" href=""
+                  ><svg width="16px" height="16px">
+                    <use href="./images/sprite.svg#icon-linkedin-1"></use></svg
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- <section>
+        <div class="container"><h2>Contacts</h2></div>
+      </section> -->
+    </main>
     <!--Footer-->
     <footer class="footer">
       <div class="container">
@@ -104,6 +170,31 @@
               ></a>
             </li>
           </ul>
+        </div>
+        <div class="footer-subscribe">
+          <p class="footer-subscribe-title">Subscribe</p>
+          <form>
+            <div class="footer-subscribe-form">
+              <label>
+                <input
+                  class="footer-subscribe-input"
+                  type="email"
+                  name="email"
+                  placeholder="E-mail"
+                  required
+                />
+              </label>
+              <button type="submit" class="footer-subscribe-btn">
+                Subscribe<svg
+                  class="footer-icon-send"
+                  width="24px"
+                  height="24px"
+                >
+                  <use href="./images/sprite.svg#icon-Frame-3"></use>
+                </svg>
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </footer>

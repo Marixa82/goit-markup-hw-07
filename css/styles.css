@@ -101,6 +101,8 @@ img {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 /* Logo */
 .logo {
@@ -117,12 +119,12 @@ img {
   color: var(--color-main);
 }
 .header {
-  padding-top: 24px;
-  padding-bottom: 24px;
+  position: relative;
   border-bottom: var(--border-main);
   box-shadow: var(--box-shadow-main);
 }
-.nav-link.current {
+.nav-link.current,
+.nav-mobile-link current {
   color: var(--color-accent);
 }
 .nav-link.current::after {
@@ -135,7 +137,9 @@ img {
   height: 4px;
   background-color: var(--color-accent);
   border-radius: 2px;
+  pointer-events: none;
 }
+
 .nav-list {
   display: flex;
   margin-left: 76px;
@@ -235,6 +239,9 @@ img {
   transition-timing-function: var(--timing-function);
   transition-property: color;
 }
+.nav-mobile-link current.modal-close:is(:hover, :focus) {
+  color: var(--color-accent);
+}
 .address-mobile {
   margin-top: auto;
 }
@@ -262,7 +269,7 @@ img {
 .hero {
   margin: auto;
   max-width: 480px;
-  height: 432px;
+
   padding-top: 112px;
   padding-bottom: 112px;
   background-color: var(--color-main);
@@ -592,27 +599,28 @@ img {
   border-color: var(--color-bgc-btn);
 }
 .filters {
-  padding-top: 96px;
-  padding-bottom: 120px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  margin: auto;
 }
-.filter {
-  margin-bottom: 72px;
-  display: flex;
-  gap: 24px;
-  justify-content: center;
-}
-.projects {
+/* .filter-container-btn {
+  width: 263px;
   display: flex;
   flex-wrap: wrap;
-  gap: 48px 24px;
+} */
+.filter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 72px;
+  flex-wrap: nowrap;
+  gap: 24px;
 }
-.projects-card {
-  flex-basis: calc((100% - 2 * 24px) / 3);
-}
+
 .projects-card-link {
   display: block;
+  text-align: center;
   background-color: var(--color-light);
-  border: var(--border-main);
+  /* border: var(--border-main); */
   box-shadow: var(--box-shadow-main);
   transition-duration: 250ms;
   transition-timing-function: var(--timing-function);
@@ -625,6 +633,8 @@ img {
   transform: translateY(0);
 }
 .projects-cover-wrap {
+  /* display: flex;
+  justify-content: center; */
   position: relative;
   overflow: hidden;
 }
@@ -643,7 +653,20 @@ img {
   transition: transform 250ms linear;
 }
 .projects-about {
+  border: var(--border-main);
+  border-top: 0;
+  border-bottom: 0;
+  text-align: left;
   padding: 32px 16px;
+}
+.projects-title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  color: var(--color-bgc);
+
+  letter-spacing: 0.02em;
 }
 .projects-text {
   color: var(--primary-text-color);
@@ -859,6 +882,13 @@ img {
   .footer-subscribe-btn {
     padding: 10px 20px;
   }
+  .button {
+    padding: 10px 20px;
+    font-weight: normal;
+  }
+  .filter {
+    gap: 20px 10px;
+  }
 }
 /* -------------------------------------------------- */
 /* ---------------------------------------------------- */
@@ -909,6 +939,26 @@ img {
   .footer-subscribe-btn {
     margin-left: auto;
     margin-right: auto;
+  }
+  .button {
+    border: none;
+    padding: 8px 16px;
+  }
+  .filter {
+    width: 264px;
+    margin-bottom: 48px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+    justify-content: flex-start;
+  }
+
+  .projects-cover-wrap {
+    display: flex;
+    justify-content: center;
+  }
+  .projects-card:not(:last-child) {
+    margin-bottom: 48px;
   }
 }
 /* ------------------------------------------------- */
@@ -1014,21 +1064,37 @@ img {
     margin-right: 24px;
     margin-bottom: 0;
   }
+  .button {
+    border: 0;
+    padding: 12px 24px;
+  }
+  .filters {
+    padding-top: 64px;
+    padding-bottom: 96px;
+  }
+  .filter {
+    margin-bottom: 64px;
+  }
+
+  .projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 72px 24px;
+  }
 }
-@media screen and (min-width: 1200px) and (max-width: 2000px) {
+@media screen and (min-width: 1200px) and (max-width: 2560px) {
   .container {
     max-width: 1158px;
     margin-left: auto;
     margin-right: auto;
   }
-  .header {
-    padding-bottom: 28px;
+  .nav-link.current::after {
+    top: 44px;
   }
   .hero {
     max-width: 1440px;
     padding-top: 188px;
     padding-bottom: 188px;
-    height: 600px;
     background-image: linear-gradient(
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
@@ -1138,5 +1204,14 @@ img {
     width: 264px;
     margin-right: 24px;
     margin-bottom: 0;
+  }
+
+  .projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px 24px;
+  }
+  .projects-card {
+    flex-basis: calc((100% - 2 * 24px) / 3);
   }
 }
